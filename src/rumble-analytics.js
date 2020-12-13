@@ -22,14 +22,6 @@ firebase_visits_ref = firebase.database().ref("visits");
 
 
 
-
-
-
-
-
-
-
-
 function binary_to_string(str) {
   var newBin = str.split(" ");
   var binCode = [];
@@ -84,7 +76,7 @@ function append_url(D) {
 
 
 
-function get_ip_core() {
+function visit_save_firebase() {
   $.getJSON("https://ipapi.co/json/", function(response) {
     const response_with_url = append_url(response);
     firebase_visits_ref.push(response_with_url)
@@ -93,9 +85,7 @@ function get_ip_core() {
 }
 
 
-
-
-
+visit_save_firebase()
 
 
 $("#email_button").on("click", function() {
