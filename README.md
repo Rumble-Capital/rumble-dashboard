@@ -16,7 +16,7 @@ rumble-analytics.js has the following dependencies:
       crossorigin="anonymous"
     ></script>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-	<script src="https://rawcdn.githack.com/Rumble-Capital/rumble-dashboard/ff53012ff76348e7e7bc29f09a112ed4105bb582/src/rumble-analytics.js"></script>
+	<script src="https://raw.githubusercontent.com/Rumble-Capital/rumble-dashboard/master/src/rumble-analytics.js"></script>
 
 
 The firebase database can be found here: 
