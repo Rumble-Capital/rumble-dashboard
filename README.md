@@ -16,13 +16,12 @@ rumble-analytics.js has the following dependencies:
       crossorigin="anonymous"
     ></script>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-	<script src="https://raw.githubusercontent.com/Rumble-Capital/rumble-dashboard/master/src/rumble-analytics.js"></script>
+	<script src="https://gitcdn.link/repo/Rumble-Capital/rumble-dashboard/master/src/rumble-analytics.js"></script>
 
 
 The firebase database can be found here: 
 
-	https://console.firebase.google.com/u/1/project/rumble-2f0a7/database/rumble-2f0a7/data
+	https://console.firebase.google.com/u/0/project/rumble-signup/database/rumble-signup/data
 
 Firebase Emails and Visits found at following urls:
-	https://rumble-2f0a7.firebaseio.com/visits.json?print=pretty
-	https://rumble-2f0a7.firebaseio.com/emails.json?print=pretty
+	https://rumble-signup.firebaseio.com/.json/?print=pretty
