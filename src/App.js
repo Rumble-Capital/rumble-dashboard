@@ -4,6 +4,7 @@ import Dashboard from "./Components/Pages/Dashboard";
 import Cruz from "./Components/Pages/Cruz";
 import Monday from "./Components/Pages/Monday";
 import Bnb from "./Components/Pages/Bnb";
+import Home from "./Components/Pages/Home";
 
 import { MondayClient } from "./Hooks/useMonday";
 import { ApolloProvider } from "@apollo/react-hooks";
@@ -14,7 +15,7 @@ const AppRouter = () => {
         <Switch>
           <Route exact path="/Dashboard" component={Dashboard} />
           <Route exact path="/Bnb" component={Bnb} />
-          <Route exact path="/" component={Monday} />
+          <Route exact path="/" component={Home} />
           <Route exact path="/Cruz" component={Cruz} />
         </Switch>
       </Fragment>
