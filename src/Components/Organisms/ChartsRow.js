@@ -4,44 +4,34 @@ import PropsContext from "../../PropsContext";
 import ChartTogglTags from "../Molecules/ChartTogglTags";
 import ChartTogglDates from "../Molecules/ChartTogglDates";
 import ChartAsanaDates from "../Molecules/ChartAsanaDates";
+import ChartFirebaseVisits from "../Molecules/ChartFirebaseVisits";
+import ChartFirebaseClicks from "../Molecules/ChartFirebaseClicks";
+import ChartFirebaseEmails from "../Molecules/ChartFirebaseEmails";
 
-const ChartsRow = ({ toggl_list, airtable_list, asana_list }) => {
+const ChartsRow = () => {
   return (
     <PropsContext.Consumer>
-      {({
-        airtable_expenses_list,
-        toggl_list,
-        airtable_toggl_list,
-        asana_list,
-        shopify_orders,
-        shopify_events,
-        shopify_customers,
-        shopify_products,
-        airtable_experiments_list,
-        airtable_goals_list,
-        refreshToggl,
-        refreshAsana
-      }) => {
+      {({ firebase_list }) => {
         return (
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
               <div className="ibox float-e-margins">
                 <div className="ibox-content">
-                  <ChartTogglTags list={toggl_list} />
+                  <ChartFirebaseVisits list={firebase_list} />
                 </div>
               </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
               <div className="ibox float-e-margins">
                 <div className="ibox-content">
-                  <ChartTogglDates list={toggl_list} />
+                  <ChartFirebaseClicks list={firebase_list} />
                 </div>
               </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
               <div className="ibox float-e-margins">
                 <div className="ibox-content">
-                  <ChartAsanaDates list={asana_list} />
+                  <ChartFirebaseEmails list={firebase_list} />
                 </div>
               </div>
             </div>

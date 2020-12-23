@@ -1,5 +1,17 @@
 import React, { Fragment, useState, useEffect } from "react";
 
+function formatFirebaseDict(D) {
+  return {
+    date: moment(D["time"]).format("YYYY-MM-DD")
+  };
+}
+
+function formatFirebaseArray(l) {
+  return _.map(l, i => {
+    const formatted_dict = formatFirebaseDict(i);
+    return Object.assign({}, i, formatted_dict);
+  });
+}
 function pullFirebaseData({ updateData }) {
   $.ajax({
     type: "GET",
@@ -7,12 +19,11 @@ function pullFirebaseData({ updateData }) {
     dataType: "json",
     async: false
   }).then(resp => {
-    console.log({ resp });
     const array = _.map(_.zip(Object.keys(resp), Object.values(resp)), function(subl) {
       return Object.assign({}, subl[1], { id: subl[0] });
     });
-    console.log({ array });
-    return updateData(array);
+    const formatted_array = formatFirebaseArray(array);
+    return updateData(formatted_array);
   });
 }
 
@@ -21,9 +32,7 @@ const useFirebase = () => {
   function refreshFirebase() {
     pullFirebaseData({ updateData: updateFirebase });
   }
-  useEffect(() => {
-    // refreshFirebase();
-  }, []);
+  useEffect(() => {}, []);
   return { firebase_list, refreshFirebase };
 };
 export default useFirebase;

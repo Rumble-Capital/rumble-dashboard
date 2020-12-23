@@ -13,6 +13,7 @@ const DashboardTemplate = () => {
         <ToolBar />
         <div className="wrapper wrapper-content">
           <MetricsRow />
+          <ChartsRow />
         </div>
       </div>
     </div>
