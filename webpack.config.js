@@ -7,7 +7,6 @@ module.exports = {
   output: {
     filename: "src.js",
     path: __dirname
-    // path: "/Users/chriscruz/Dropbox/Apps/site44/chriscross.site44.com/js/"
   },
   module: {
     rules: [

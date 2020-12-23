@@ -1,35 +1,36 @@
-import React, { Component, Fragment } from "react";
-import ReactDOM from "react-dom";
-import { HashRouter, Route, Link, Switch, NavLink } from "react-router-dom";
-import { PageWrapper, TopNavigation, Navigation } from "./Components/Inspinia";
-import Landing from "./Components/Landing/Landing";
-import Main from "./Components/Pages/Main";
+import React, { Fragment } from "react";
+import { HashRouter, BrowserRouter as Router, Route, Link, Redirect, Switch } from "react-router-dom";
+import Dashboard from "./Components/Pages/Dashboard";
+import Cruz from "./Components/Pages/Cruz";
+import Monday from "./Components/Pages/Monday";
+import Bnb from "./Components/Pages/Bnb";
 
-import Blog from "./Components/Blog/Blog";
-import Post from "./Components/Post/Post";
-import { get_ip_slack_visit } from "./slackVisit";
-// import "./Wordpress.scss";
-
-// import "./App.scss";
-// import "./Custom.scss";
-
-const App = props => {
-  get_ip_slack_visit();
+import { MondayClient } from "./Hooks/useMonday";
+import { ApolloProvider } from "@apollo/react-hooks";
+const AppRouter = () => {
   return (
-    <div>
-      <Main />
-      {/* <HashRouter>
+    <HashRouter>
       <Fragment>
         <Switch>
-          <Route exact path="/" component={Main} />
-          <Route path="/Blog" component={Blog} />
-          <Route path="/Post" component={Post} />
-          <Route path="/Post/:id" component={Post} />
-          <Route path="/" component={Landing} />
+          <Route exact path="/Dashboard" component={Dashboard} />
+          <Route exact path="/Bnb" component={Bnb} />
+          <Route exact path="/" component={Monday} />
+          <Route exact path="/Cruz" component={Cruz} />
         </Switch>
       </Fragment>
-    </HashRouter> */}
+    </HashRouter>
+  );
+};
+
+const App = () => {
+  const client = MondayClient();
+  return (
+    <div>
+      <ApolloProvider client={client}>
+        <AppRouter />
+      </ApolloProvider>
     </div>
   );
 };
+
 export default App;
