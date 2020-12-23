@@ -14,6 +14,7 @@ const DashboardTemplate = () => {
         <div className="wrapper wrapper-content">
           <MetricsRow />
           <ChartsRow />
+          <DataTablesRow />
         </div>
       </div>
     </div>
