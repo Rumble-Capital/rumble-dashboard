@@ -30,7 +30,7 @@
     <div class="container container-table">
       <div class="row vertical-center-row">
         <div class="text-center col-md-4 col-md-offset-4">
-          <button type="button" id="submitButton" class="btn btn-success" style="margin: 10px;">Get Rumble Data!</button>
+          <button type="button" id="submitButton" class="btn btn-success" style="margin: 10px;">Get Rumble Data</button>
         </div>
       </div>
     </div>
@@ -63,9 +63,19 @@
               dataType: tableau.dataTypeEnum.bool
             },
             {
+              id: "date_string",
+              alias: "date_string",
+              dataType: tableau.dataTypeEnum.string
+            },
+            {
               id: "date",
               alias: "date",
               dataType: tableau.dataTypeEnum.date
+            },
+            {
+              id: "datetime",
+              alias: "datetime",
+              dataType: tableau.dataTypeEnum.datetime
             }
           ];
 
@@ -93,7 +103,9 @@
                 url: feat[i].url,
                 click: feat[i].click,
                 email: feat[i].email,
-                date: moment(feat[i].time).format()
+                date_string: moment(feat[i].time).format("YYYY-MM-DD"),
+                date: moment(feat[i].time).format("YYYY-MM-DD"),
+                datetime: moment(feat[i].time).format("YYYY-MM-DD HH:mm:ss")
               });
             }
 
