@@ -6,6 +6,7 @@ import DataTableAsanaCompleted from "../Molecules/DataTableAsanaCompleted";
 import DataTableAsanaCurrent from "../Molecules/DataTableAsanaCurrent";
 import DataTableAirTableGoals from "../Molecules/DataTableAirTableGoals";
 import DataTableAirTableExperiments from "../Molecules/DataTableAirTableExperiments";
+import DataTableFirebaseVisits from "../Molecules/DataTableFirebaseVisits";
 
 const DataTablesRow = () => {
   return (
@@ -50,7 +51,7 @@ const DataTablesRow = () => {
                   <div className="tab-content">
                     <div className="tab-pane active" id="tab-firebase-visits">
                       <div className="panel-body active">
-                        <DataTable
+                        <DataTableFirebaseVisits
                           {...{
                             id: "firebase_visits_table",
                             data: firebase_list
@@ -60,7 +61,7 @@ const DataTablesRow = () => {
                     </div>
                     <div className="tab-pane" id="tab-firebase-emails">
                       <div className="panel-body">
-                        <DataTable
+                        <DataTableFirebaseVisits
                           {...{
                             id: "firebase_emails_table",
                             data: firebase_emails
@@ -70,7 +71,7 @@ const DataTablesRow = () => {
                     </div>
                     <div className="tab-pane " id="tab-firebase-clicks">
                       <div className="panel-body">
-                        <DataTable
+                        <DataTableFirebaseVisits
                           {...{
                             id: "firebase_clicks_table",
                             data: firebase_clicks

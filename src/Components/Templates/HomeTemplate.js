@@ -9,7 +9,7 @@ import ExperimentsGoalsRow from "../Organisms/ExperimentsGoalsRow";
 const DashboardTemplate = () => {
   return (
     <div id="wrapper">
-      <div id="page-wrapper" class="gray-bg dashbard-1" style={{ minHeight: "764px" }}>
+      <div id="page-wrapper1" class="gray-bg dashbard-1" style={{ minHeight: "764px" }}>
         <ToolBar />
         <div className="wrapper wrapper-content">
           <MetricsRow />
